@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 export const UseState = () => {
-    // Declare a state variable called "count" and initialize it to 0
     const [count, setCount] = useState(0);
 
     return (

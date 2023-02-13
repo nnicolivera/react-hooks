@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css'
+import '../App.css';
 
 export const Home = () => {
     return (
@@ -16,6 +16,18 @@ export const Home = () => {
                     </li>
                     <li className='nav-item'>
                         <Link to="/usecontext">useContext</Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to="/usereducer">useReducer</Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to="/usecallback">useCallback</Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to="/usememo">useMemo</Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to="/useref">useRef</Link>
                     </li>
                 </ul>
             </nav>

@@ -5,7 +5,7 @@ export const UseEffect = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
             const data = await response.json();
             setPokemonList(data.results);
         };
@@ -15,11 +15,21 @@ export const UseEffect = () => {
     return (
         <>
             <h2>Pokemon List:</h2>
-            <ul>
-                {pokemonList.map(x => (
-                    <li key={x.name}>{x.name}</li>
-                ))}
-            </ul>
+            {
+                pokemonList ? (
+                    <div>
+                        <ul>
+                            {pokemonList.map(x => (
+                                <li key={x.name}>{x.name}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <div>
+                        <h3>Loading...</h3>
+                    </div>
+                )
+            }
         </>
     );
 }; 
