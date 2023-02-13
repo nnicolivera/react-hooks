@@ -1,15 +1,18 @@
-import React, { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 export const UseRef = () => {
-    const [count, setCount] = useState(0);
-    const countRef = useRef(count);
+    const countRef = useRef(0);
+
+    const handle = () => {
+        countRef.current++;
+        console.log(`Clicked ${countRef.current} times`);
+    };
 
     return (
-        <div>
-            <p>Count: {count}</p>
-            <p>Previous count: {countRef.current}</p>
-            <button onClick={() => setCount(c => c + 1)}>Increment</button>
-            {countRef.current = count}
-        </div>
-    );
-}
+        <>
+            {/* updated value with each click */}
+            {countRef.current}
+            <button onClick={handle}>Click me</button>
+        </>
+    )
+} 
